@@ -88,7 +88,7 @@
 			<div class="content d-flex justify-content-center align-items-center">
 
 				<!-- Login card -->
-				<form class="login-form" method="POST" action="{{ route('result') }}">
+				<form class="login-form" method="GET" action="{{ route('form') }}">
 					@csrf
 					<div class="card mb-0">
 						<div class="card-body">
@@ -97,24 +97,30 @@
 								<span class="d-block text-muted">Kwadran Lima Indonesia</span>
 							</div>
 
-							<div class="form-group form-group-feedback form-group-feedback-left">
-								<input type="text" class="form-control" placeholder="Nama" name="nama" value="{{ old('nama') }}" required>
-								<div class="form-control-feedback">
-									<i class="icon-user text-muted"></i>
-								</div>
-							</div>
+                            <span class="form-text text-center text-bold">
+                                Halo {{ $data['nama'] }},
+                            </span>
 
-							<div class="form-group form-group-feedback form-group-feedback-left">
-								<input type="date" class="form-control" placeholder="Tanggal Lahir" name="birthdate" value="{{ old('birthdate') }}" required>
-								<div class="form-control-feedback">
-									<i class="icon-calendar text-muted"></i>
-								</div>
-							</div>
+                            <span class="form-text text-center text-bold">
+                                Usia anda saat ini adalah :
+                                <br>
+                                {{ $data['tahun'] }} Tahun,
+                                <br>
+                                {{ $data['tahun'] }} Bulan,
+                                <br>
+                                {{ $data['tahun'] }} Hari
+                            </span>
+
+                            <span class="form-text text-center text-bold">
+                                Bintang anda adalah
+                                <br>
+                                {{ $data['zodiak'] }}
+                            </span>
 
 							<div class="form-group mt-4">
-								<button type="submit" class="btn btn-primary btn-block">
-									Submit
-									<i class="icon-circle-right2 ml-2"></i>
+								<button type="submit" class="btn btn-danger btn-block">
+									<i class="icon-circle-left2 ml-2"></i>
+                                    Back
 								</button>
 							</div>
 
