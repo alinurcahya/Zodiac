@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CountController;
 use App\Http\Controllers\ZodiacController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ZodiacController::class, 'form'])->name('form');
 Route::post('/result', [ZodiacController::class, 'result'])->name('result');
+Route::get('/count', [CountController::class, 'count'])->name('count');
+Route::post('/count-result', [CountController::class, 'countResult'])->name('countResult');
